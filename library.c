@@ -26,11 +26,6 @@ void list() {
 
 }
 
-struct node {
-    int32_t data;
-    struct node *next;
-};
-
 void hello(void) {
     printf("Hello, World!\n");
 }

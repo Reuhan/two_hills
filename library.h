@@ -3,4 +3,6 @@
 
 void hello(void);
 
+struct node;
+
 #endif //TWO_HILLS_LIBRARY_H
