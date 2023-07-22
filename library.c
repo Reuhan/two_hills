@@ -25,7 +25,3 @@ void stack() {
 void list() {
 
 }
-
-void hello(void) {
-    printf("Hello, World!\n");
-}
