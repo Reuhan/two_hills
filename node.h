@@ -10,21 +10,23 @@ typedef struct node *stack;
 
 struct node {
     int32_t data;
-    struct node *next;
+    node *next;
+    node *head;
+    node *tail;
 };
 
 list constructor();
 
 void destructor(list);
 
-void insertHead(int32_t data, list ls);
+void insertHead(int32_t data, list);
 
-void insertTail(int32_t data, list ls);
+void insertTail(int32_t data, list);
 
-void delete(int32_t, node *);
+void delete(int32_t, list);
 
-bool search(int32_t, node);
+bool search(int32_t, list);
 
-void view(node *);
+void view(list);
 
 #endif //TWO_HILLS_NODE_H
