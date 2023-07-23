@@ -96,9 +96,9 @@ void view(list ls) {
 }
 
 void head(list ls) {
-    printf("%d\n", ls->head);
+    printf("%d\n", ls->head->data);
 }
 
 void tail(list ls) {
-    printf("%d\n", ls->tail);
+    printf("%d\n", ls->tail->data);
 }
