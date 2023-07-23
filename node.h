@@ -4,29 +4,21 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-typedef struct node node;
-typedef struct node *list;
-typedef struct node *stack;
-
 struct node {
     int32_t data;
-    node *next;
-    node *head;
-    node *tail;
+    struct node *next;
 };
 
-list constructor();
+struct node *new();
 
-void destructor(list);
+void delete(struct node *);
 
-void insertHead(int32_t data, list);
+void insert(int32_t, struct node *);
 
-void insertTail(int32_t data, list);
+void erase(int32_t, struct node *);
 
-void delete(int32_t, list);
+bool search(int32_t, struct node *);
 
-bool search(int32_t, list);
-
-void view(list);
+void view(struct node *);
 
 #endif //TWO_HILLS_NODE_H
