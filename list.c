@@ -7,6 +7,7 @@ struct List *listInit() {
     struct List *new = malloc(sizeof(struct List));
     new->first = NULL;
     new->last = NULL;
+    new->size = 0;
 
     return new;
 }
@@ -26,12 +27,16 @@ void firstInsert(int data, struct List *ls) {
         ls->first->data = data;
         ls->first->next = temp;
     }
+
+    ls->size = ls->size + 1;
 }
 
 void firstDelete(struct List *ls) {
     struct Node *temp = ls->first;
     ls->first = ls->first->next;
     free(temp);
+
+    ls->size = ls->size - 1;
 }
 
 void lastInsert(int data, struct List *ls) {
@@ -49,6 +54,8 @@ void lastInsert(int data, struct List *ls) {
         ls->last->data = data;
         temp->next = ls->last;
     }
+
+    ls->size = ls->size + 1;
 }
 
 int listIsEmpty(struct List *ls) {
@@ -68,6 +75,6 @@ void listView(struct List *ls) {
     do {
         printf("%d ", iter->data);
         iter = iter->next;
-    } while (iter->next != NULL);
+    } while (iter != NULL);
     printf("\n");
 }
