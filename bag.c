@@ -3,7 +3,7 @@
 #include "node.h"
 #include "bag.h"
 
-struct Bag *init() {
+struct Bag *bagInit() {
     struct Bag *new = malloc(sizeof(struct Bag));
     new->first = NULL;
     new->size = 0;
@@ -16,6 +16,7 @@ void add(int data, struct Bag *bag) {
         bag = malloc(sizeof(struct Node));
 
         bag->first->data = data;
+        bag->first->next = NULL;
     } else {
         struct Node *temp = bag->first;
         bag = malloc(sizeof(struct Node));
@@ -39,7 +40,7 @@ int size(struct Bag *bag) {
     return bag->size;
 }
 
-void view(struct Bag *bag) {
+void bagView(struct Bag *bag) {
     struct Node *iter = bag->first;
     do {
         printf("%d ", iter->data);

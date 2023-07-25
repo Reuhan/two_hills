@@ -3,7 +3,7 @@
 #include "node.h"
 #include "list.h"
 
-struct List *init() {
+struct List *bagInit() {
     struct List *new = malloc(sizeof(struct List));
     new->first = NULL;
     new->last = NULL;
@@ -16,6 +16,8 @@ void firstInsert(int data, struct List *ls) {
         ls->first = malloc(sizeof(struct Node));
 
         ls->first->data = data;
+        ls->first->next = NULL;
+
         ls->last = ls->first;
     } else {
         struct Node *temp = ls->first;
@@ -37,6 +39,8 @@ void lastInsert(int data, struct List *ls) {
         ls->last = malloc(sizeof(struct Node));
 
         ls->last->data = data;
+        ls->last->next = NULL;
+
         ls->first = ls->last;
     } else {
         struct Node *temp = ls->last;
@@ -52,6 +56,6 @@ void view(struct List *ls) {
     do {
         printf("%d ", iter->data);
         iter = iter->next;
-    } while (iter != NULL);
+    } while (iter->next != NULL);
     printf("\n");
 }

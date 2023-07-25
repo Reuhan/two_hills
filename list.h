@@ -6,7 +6,7 @@ struct List {
     struct Node *last;
 };
 
-struct List *init();
+struct List *bagInit();
 
 void firstInsert(int data, struct List *ls);
 
