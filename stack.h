@@ -5,8 +5,10 @@
 #ifndef TWO_HILLS_STACK_H
 #define TWO_HILLS_STACK_H
 
+#include "node.h"
+
 struct Stack {
-    struct Node* first;
+    struct Node *first;
 };
 
 #endif //TWO_HILLS_STACK_H
