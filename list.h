@@ -6,11 +6,13 @@ struct List {
     struct Node *last;
 };
 
-void firstInsert(struct List *ls);
+struct List *init();
+
+void firstInsert(int data, struct List *ls);
 
 void firstDelete(struct List *ls);
 
-void lastInsert(struct List *ls);
+void lastInsert(int data, struct List *ls);
 
 void view(struct List *ls);
 
