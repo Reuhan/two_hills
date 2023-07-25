@@ -1,6 +1,8 @@
 #ifndef TWO_HILLS_LIST_H
 #define TWO_HILLS_LIST_H
 
+#include "node.h"
+
 struct List {
     struct Node *first;
     struct Node *last;

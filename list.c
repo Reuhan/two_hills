@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "node.h"
 #include "list.h"
 
 struct List *listInit() {
