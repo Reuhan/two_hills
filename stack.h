@@ -18,6 +18,6 @@ int stackIsEmpty(struct Stack *stk);
 
 int stackSize(struct Stack *stk);
 
-void stackView();
+void stackView(struct Stack *stk);
 
 #endif //TWO_HILLS_STACK_H

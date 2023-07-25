@@ -8,22 +8,30 @@ struct Stack *stackInit() {
 }
 
 void push(int data, struct Stack *stk) {
-    struct Stack* temp = stk;
-
+    struct Node *temp = stk->first;
+    stk->first = malloc(sizeof(struct Node));
+    stk->first->data = data;
+    stk->first->next = temp;
 }
 
 void pop(struct Stack *stk) {
-
+    struct Node *temp = stk->first;
+    stk->first = stk->first->next;
+    free(temp);
 }
 
 int stackIsEmpty(struct Stack *stk) {
-
+    if (stk->first == NULL) {
+        return 1;
+    } else {
+        return 0;
+    }
 }
 
 int stackSize(struct Stack *stk) {
-
+    return stk->size;
 }
 
-void stackView() {
+void stackView(struct Stack *stk) {
 
 }
