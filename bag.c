@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "node.h"
 #include "bag.h"
 
 struct Bag *bagInit() {

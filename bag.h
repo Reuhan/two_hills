@@ -1,6 +1,8 @@
 #ifndef TWO_HILLS_BAG_H
 #define TWO_HILLS_BAG_H
 
+#include "node.h"
+
 struct Bag {
     struct Node *first;
     int size;
