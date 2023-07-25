@@ -3,11 +3,10 @@
 #include "node.h"
 #include "list.h"
 
-struct List *init() {
+struct List *listInit() {
     struct List *new = malloc(sizeof(struct List));
     new->first = NULL;
     new->last = NULL;
-    new->size = 0;
 
     return new;
 }
@@ -17,6 +16,8 @@ void firstInsert(int data, struct List *ls) {
         ls->first = malloc(sizeof(struct Node));
 
         ls->first->data = data;
+        ls->first->next = NULL;
+
         ls->last = ls->first;
     } else {
         struct Node *temp = ls->first;
@@ -25,16 +26,12 @@ void firstInsert(int data, struct List *ls) {
         ls->first->data = data;
         ls->first->next = temp;
     }
-
-    ls->size = ls->size + 1;
 }
 
 void firstDelete(struct List *ls) {
     struct Node *temp = ls->first;
     ls->first = ls->first->next;
     free(temp);
-
-    ls->size = ls->size - 1;
 }
 
 void lastInsert(int data, struct List *ls) {
@@ -42,6 +39,8 @@ void lastInsert(int data, struct List *ls) {
         ls->last = malloc(sizeof(struct Node));
 
         ls->last->data = data;
+        ls->last->next = NULL;
+
         ls->first = ls->last;
     } else {
         struct Node *temp = ls->last;
@@ -50,11 +49,9 @@ void lastInsert(int data, struct List *ls) {
         ls->last->data = data;
         temp->next = ls->last;
     }
-
-    ls->size = ls->size + 1;
 }
 
-int isEmpty(struct List *ls) {
+int listIsEmpty(struct List *ls) {
     if (ls->first == NULL && ls->last == NULL) {
         return 1;
     } else {
@@ -62,15 +59,15 @@ int isEmpty(struct List *ls) {
     }
 }
 
-int size(struct List *ls) {
+int listSize(struct List *ls) {
     return ls->size;
 }
 
-void view(struct List *ls) {
+void listView(struct List *ls) {
     struct Node *iter = ls->first;
     do {
         printf("%d ", iter->data);
         iter = iter->next;
-    } while (iter != NULL);
+    } while (iter->next != NULL);
     printf("\n");
 }

@@ -7,7 +7,7 @@ struct List {
     int size;
 };
 
-struct List *init();
+struct List *listInit();
 
 void firstInsert(int data, struct List *ls);
 
@@ -15,10 +15,10 @@ void firstDelete(struct List *ls);
 
 void lastInsert(int data, struct List *ls);
 
-int isEmpty(struct List *ls);
+int listIsEmpty(struct List *ls);
 
-int size(struct List *ls);
+int listSize(struct List *ls);
 
-void view(struct List *ls);
+void listView(struct List *ls);
 
 #endif
