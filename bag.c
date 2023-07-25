@@ -13,13 +13,13 @@ struct Bag *bagInit() {
 
 void add(int data, struct Bag *bag) {
     if (bag->first == NULL) {
-        bag = malloc(sizeof(struct Node));
+        bag->first = malloc(sizeof(struct Node));
 
         bag->first->data = data;
         bag->first->next = NULL;
     } else {
         struct Node *temp = bag->first;
-        bag = malloc(sizeof(struct Node));
+        bag->first = malloc(sizeof(struct Node));
 
         bag->first->data = data;
         bag->first->next = temp;
@@ -28,7 +28,7 @@ void add(int data, struct Bag *bag) {
     bag->size = bag->size + 1;
 }
 
-int isEmpty(struct Bag *bag) {
+int bagIsEmpty(struct Bag *bag) {
     if (bag->first == NULL) {
         return 1;
     } else {
@@ -36,7 +36,7 @@ int isEmpty(struct Bag *bag) {
     }
 }
 
-int size(struct Bag *bag) {
+int bagSize(struct Bag *bag) {
     return bag->size;
 }
 

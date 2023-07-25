@@ -10,9 +10,9 @@ struct Bag *bagInit();
 
 void add(int data, struct Bag *bag);
 
-int isEmpty(struct Bag *bag);
+int bagIsEmpty(struct Bag *bag);
 
-int size(struct Bag *bag);
+int bagSize(struct Bag *bag);
 
 void bagView(struct Bag *bag);
 
