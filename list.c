@@ -1,5 +1,18 @@
 #include "node.h"
 #include "list.h"
-#include <stdio.h>
-#include <stdbool.h>
-#include <stdlib.h>
+
+void firstInsert(struct List *ls) {
+
+}
+
+void firstDelete(struct List *ls) {
+
+}
+
+void lastInsert(struct List *ls) {
+
+}
+
+void view(struct List *ls) {
+
+}

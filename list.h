@@ -1,22 +1,17 @@
-//
-// Created by 이준영 on 2023/07/24.
-//
-
 #ifndef TWO_HILLS_LIST_H
 #define TWO_HILLS_LIST_H
 
-#include "node.h"
-#include <stdbool.h>
-
 struct List {
-    struct Node *head;
-    struct Node *tail;
+    struct Node *first;
+    struct Node *last;
 };
 
-void insert(int, struct Node *);
+void firstInsert(struct List *ls);
 
-void delete(int, struct Node *);
+void firstDelete(struct List *ls);
 
-void view(struct Node *);
+void lastInsert(struct List *ls);
 
-#endif //TWO_HILLS_LIST_H
+void view(struct List *ls);
+
+#endif
