@@ -5,6 +5,18 @@
 #ifndef TWO_HILLS_QUEUE_H
 #define TWO_HILLS_QUEUE_H
 
+#include "node.h"
+
+struct Queue {
+    struct Node* first;
+    struct Node* last;
+    int size;
+};
+
+struct Queue queueInit();
+void enqueue();
+int dequeue();
+
 
 
 #endif //TWO_HILLS_QUEUE_H
