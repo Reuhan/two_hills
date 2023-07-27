@@ -3,4 +3,4 @@ project(two_hills C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_library(two_hills node.h bag.c bag.h list.c)
+add_library(two_hills node.h bag.c bag.h list.c stack.h stack.c)

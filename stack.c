@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include "stack.h"
 
@@ -8,16 +9,28 @@ struct Stack *stackInit() {
 }
 
 void push(int data, struct Stack *stk) {
-    struct Node *temp = stk->first;
-    stk->first = malloc(sizeof(struct Node));
-    stk->first->data = data;
-    stk->first->next = temp;
+    if (stk->first == NULL) {
+        stk->first = malloc(sizeof(struct Node));
+
+        stk->first->data = data;
+        stk->first->next = NULL;
+    } else {
+        struct Node *temp = stk->first;
+        stk->first = malloc(sizeof(struct Node));
+
+        stk->first->data = data;
+        stk->first->next = temp;
+    }
+
+    stk->size = stk->size + 1;
 }
 
 void pop(struct Stack *stk) {
     struct Node *temp = stk->first;
     stk->first = stk->first->next;
     free(temp);
+
+    stk->size = stk->size - 1;
 }
 
 int stackIsEmpty(struct Stack *stk) {
@@ -33,5 +46,10 @@ int stackSize(struct Stack *stk) {
 }
 
 void stackView(struct Stack *stk) {
-
+    struct Node *iter = stk->first;
+    do {
+        printf("%d ", iter->data);
+        iter = iter->next;
+    } while (iter != NULL);
+    printf("\n");
 }
