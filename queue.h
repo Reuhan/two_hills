@@ -13,7 +13,7 @@ struct Queue {
     int size;
 };
 
-struct Queue queueInit();
+struct Queue* queueInit();
 
 void enqueue(int data, struct Queue *que);
 

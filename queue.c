@@ -1,7 +1,13 @@
+#include <stdlib.h>
 #include "queue.h"
 
-struct Queue queueInit() {
+struct Queue *queueInit() {
+    struct Queue *new = malloc(sizeof(struct Queue));
+    new->first = NULL;
+    new->last = NULL;
+    new->size = 0;
 
+    return new;
 }
 
 void enqueue(int data, struct Queue *que) {
