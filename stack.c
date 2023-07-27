@@ -6,6 +6,8 @@ struct Stack *stackInit() {
     struct Stack *new = malloc(sizeof(struct Stack));
     new->first = NULL;
     new->size = 0;
+
+    return new;
 }
 
 void push(int data, struct Stack *stk) {
