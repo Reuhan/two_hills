@@ -25,12 +25,16 @@ void push(int data, struct Stack *stk) {
     stk->size = stk->size + 1;
 }
 
-void pop(struct Stack *stk) {
+int pop(struct Stack *stk) {
     struct Node *temp = stk->first;
     stk->first = stk->first->next;
+
+    int result = temp->data;
     free(temp);
 
     stk->size = stk->size - 1;
+
+    return result;
 }
 
 int stackIsEmpty(struct Stack *stk) {

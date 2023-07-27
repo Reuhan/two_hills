@@ -12,7 +12,7 @@ struct Stack *stackInit();
 
 void push(int data, struct Stack *stk);
 
-void pop(struct Stack *stk);
+int pop(struct Stack *stk);
 
 int stackIsEmpty(struct Stack *stk);
 
